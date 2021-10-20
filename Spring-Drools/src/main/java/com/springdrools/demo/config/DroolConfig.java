@@ -14,7 +14,10 @@ import org.kie.internal.io.ResourceFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Configuration
+@Slf4j
 public class DroolConfig {
 
 	private KieServices kieServices = KieServices.Factory.get();
@@ -28,7 +31,7 @@ public class DroolConfig {
 
 	@Bean
 	public KieContainer getKieContainer() throws IOException {
-		System.out.println("Container created...");
+		log.info("Container created....");
 		getKieRepository();
 		KieBuilder kb = kieServices.newKieBuilder(getKieFileSystem());
 		kb.buildAll();
@@ -49,7 +52,7 @@ public class DroolConfig {
 
 	@Bean
 	public KieSession getKieSession() throws IOException {
-		System.out.println("session created...");
+		log.info("Session Created.....");
 		return getKieContainer().newKieSession();
 
 	}
