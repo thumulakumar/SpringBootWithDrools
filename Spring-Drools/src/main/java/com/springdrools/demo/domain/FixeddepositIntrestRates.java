@@ -8,8 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FixeddepositIntrestRates {
-	private String bankName;
-    private Integer durationInYear;
+	private String bankName;    
     private String fixeddepositInterestRate;
 
 }

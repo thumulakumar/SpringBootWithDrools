@@ -26,14 +26,13 @@ public class DroolConfig {
 
 	private KieFileSystem getKieFileSystem() throws IOException {
 		KieFileSystem kieFileSystem = kieServices.newKieFileSystem();
-		
+
 		FileInputStream dtableFileStream = new FileInputStream("src/main/resources/rules/dtable.xlsx");
 		FileInputStream drl = new FileInputStream("src/main/resources/rules/offer.drl");
 		kieFileSystem
 				.write("src/main/resources/rules/offer.drl", kieServices.getResources().newInputStreamResource(drl))
 				.write("src/main/resources/rules/dtable.xlsx",
 						kieServices.getResources().newInputStreamResource(dtableFileStream));
-
 		// kieFileSystem.write(ResourceFactory.newClassPathResource("src/main/resources/rules/dtable.xlsx"));
 		return kieFileSystem;
 
