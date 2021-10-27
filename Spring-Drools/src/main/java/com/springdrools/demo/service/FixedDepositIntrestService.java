@@ -11,10 +11,10 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 public class FixedDepositIntrestService {
-	
+
 	@Autowired
 	private KieSession session;
-	
+
 	public FixeddepositIntrestRates calculateIntrestPercentage(FixeddepositIntrestRates fd) {
 		log.info("Service-- Started Code for Calculating Intrest Percentage ");
 		session.insert(fd);
